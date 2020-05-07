@@ -1,0 +1,15 @@
+
+Had to
+- create venv for python 3.6 (3.7 does not work with older tf)
+- manually install tf 1.4.1 (1.4.0 would not install)
+
+
+got an unexpected keyword argument 'supress_unk'
+
+
+...multi podporuje víc hypotéz na jednom řádku olddělenejch  ### 
+
+
+
+
+Jinak LSD demo běží s TensorFlow 1.4.1, tensorflow-models jsou tam na commitu 34beb7adfcd2f394, jestli mu to pomůže.

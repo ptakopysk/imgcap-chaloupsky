@@ -1,0 +1,30 @@
+usage: imagenet_features.py [-h]
+                            [--net {vgg_16,vgg_19,resnet_v2_50,resnet_v2_101,resnet_v2_152}]
+                            [--input-prefix INPUT_PREFIX]
+                            [--output-prefix OUTPUT_PREFIX] --slim-models
+                            SLIM_MODELS --model-checkpoint MODEL_CHECKPOINT
+                            --conv-map CONV_MAP [--images IMAGES]
+                            [--batch-size BATCH_SIZE]
+
+Extract imagenet features from given images. The script reads a list of pahts
+to images (specified by path prefix and list of relative paths), process the
+images using an imagenet network and extract a given convolutional map from
+the image. The maps are saved as numpy tensors in files with a different
+prefix and the same relative path from this prefix ending with .npz.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --net {vgg_16,vgg_19,resnet_v2_50,resnet_v2_101,resnet_v2_152}
+                        Type of imagenet network.
+  --input-prefix INPUT_PREFIX
+                        Prefix of the image path.
+  --output-prefix OUTPUT_PREFIX
+                        Prefix of the path to the output numpy files.
+  --slim-models SLIM_MODELS
+                        Path to SLIM models in cloned tensorflow/models
+                        repository
+  --model-checkpoint MODEL_CHECKPOINT
+                        Path to the ImageNet model checkpoint.
+  --conv-map CONV_MAP   Name of the convolutional map that is.
+  --images IMAGES       File with paths to images or stdin by default.
+  --batch-size BATCH_SIZE
