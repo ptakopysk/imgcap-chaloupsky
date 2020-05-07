@@ -4,9 +4,9 @@
 #
 # !!! Memory limit
 #$ -hard
-#$ -l mem_free=20g
-#$ -l act_mem_free=20g
-#$ -l h_data=20g
+#$ -l mem_free=10g
+#$ -l act_mem_free=10g
+#$ -l h_vmem=10g
 #
 # Run in this directory
 #$ -cwd
@@ -25,29 +25,22 @@
 #
 # run in troja or ms (but not gpu)
 # -q '(troja*|ms*)'
-#$ -q 'gpu*'
+#$ -q 'cpu-*.q'
 #
 # send mail: b started, e ended, a aborted or rescheduled, s suspended
-# -M rosa@ufal.mff.cuni.cz -m beas
+# -M rosa@ufal.mff.cuni.cz
+#  -m beas
 #
-# 24 threads
-# -pe smp 24
-#
-# gpu stuff
-#$ -l gpu=1
-#$ -l gpu_cc_min3.5=1
-#$ -l gpu_ram=12G
-
+# 1 thread
+#$ -pe smp 1
 
 # Print each command to STDERR before executing (expanded), prefixed by "+ "
 set -o xtrace
 
 renice 10 $$ >&2
 
+source neuralmonkey/venv-cpu/bin/activate
 
-# source ~helcl/work/virtualenv/tensorflow-1.4-gpu/bin/activate
+neuralmonkey/bin/neuralmonkey-run run_exp_500.ini data_500_good_train450.ini
 
-source neuralmonkey/venv-gpu/bin/activate
-
-neuralmonkey/bin/neuralmonkey-run run_500.ini data_500_gpu.ini
 

@@ -2,6 +2,9 @@
 Had to
 - create venv for python 3.6 (3.7 does not work with older tf)
 - manually install tf 1.4.1 (1.4.0 would not install)
+- install termcolor scipy typeguard
+- install pyter by downloading and copying into lib...
+
 
 
 got an unexpected keyword argument 'supress_unk'
