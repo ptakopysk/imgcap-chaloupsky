@@ -44,6 +44,8 @@ D=data_test_images_1k_$1.ini
 
 echo Run $1 $R $D
 
+./ln_variables_best.sh $1
+
 sed s/SSS/$1/g run_SSS.ini > $R
 sed s/SSS/$1/g data_test_images_1k_SSS.ini > $D
 
