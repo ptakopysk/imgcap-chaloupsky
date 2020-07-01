@@ -50,3 +50,6 @@ neuralmonkey/scripts/imagenet_features.py \
     --conv-map resnet_v2_50/block4/unit_3/bottleneck_v2/conv3 \
     --net resnet_v2_50
 
+# another test commit
+
+
