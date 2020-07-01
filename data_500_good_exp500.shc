@@ -43,4 +43,4 @@ source neuralmonkey/venv-cpu/bin/activate
 
 neuralmonkey/bin/neuralmonkey-run run_exp_500.ini data_500_good_train450.ini
 
-
+# změna test
